@@ -1,0 +1,27 @@
+<%= form_for @task, remote: true do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_area :name, class: "form-control", placeholder: "Name your task." %>
+  </div>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control", placeholder: "Describe your task" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :deadline %>
+    <%= form.text_field :deadline, id: "datetimepicker1", class: "form-control", placeholder: "When's it due?"%>
+  </div>
+  <div class="form-group">
+    <%= form.label :start_time %>
+    <%= form.text_field :start_time, id: "datetimepicker2", class: "form-control", placeholder: "Start Working Time?"%>
+  </div>
+  <div class="form-group">
+    <%= form.label :end_time %>
+    <%= form.text_field :end_time, id: "datetimepicker3", class: "form-control", placeholder: "End Working Time?"%>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<br>

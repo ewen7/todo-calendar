@@ -1,0 +1,16 @@
+<%= @tasks.count %>
+<% @tasks.each do |task| %>
+	<%= task.name %>
+<% end %>
+<br> <br> <br>
+
+<%= month_calendar events: @tasks do |date, tasks| %>
+  <%= date.strftime("%e") %>
+
+  <% tasks.each do |task| %>
+    <div>
+      <%= task.name %>
+    </div>
+  <% end %>
+
+<% end %>

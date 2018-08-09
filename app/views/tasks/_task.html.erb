@@ -1,0 +1,9 @@
+<table id="task-table">
+	<tr>
+		<td> <%= check_box_tag "Task", "yes" %> </td>
+		<td> <b> <%= task.description %> </b> </td>
+		<td> <%= Time.parse(task.deadline).strftime("%a %b %e, %Y %l %M %p") %> </td>
+		<td> <%= link_to "Edit", edit_task_path(task), remote: true%> | <%= link_to "Delete", task, remote: true, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+	</tr>
+</table>
+
